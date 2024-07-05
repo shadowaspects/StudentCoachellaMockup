@@ -1,0 +1,495 @@
+/* ---VARIABLES--- */
+/* Setting variables, for example: colours and fonts across the whole site from
+just one, easy to manage section. */
+:root {
+    --color-primary: white;
+    --color-shadow: #25252556;
+    --color-semi-transparent: rgba(255, 255, 255, 0.087);
+    --color-background: black;
+   
+    --font-text: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+   /* Disclaimer : Hero and sunglasses Images created manually using Microsoft AI tool */
+  /* CSS RESET */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    box-shadow: 0 5rem 3rem var(--color-shadow);
+    padding: 0.2rem;
+    z-index: 1;
+  }
+  main {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 2rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
+      url("../images/background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  /*Start of Nav bar*/
+  nav {
+    
+    height: 10vh;
+    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+  }
+
+  .navbar {
+    width: 1688px;
+    flex-wrap: wrap;
+  }
+
+  /* Dark mode: just a test of an idea to switch dark mode*/
+:root {
+  --primary-color: #212121;
+  --secondary-color: #edf2fc;
+}
+/* dark color switch option for navbar color change. ref darkMode.js*/
+/*color set to root,. onclick switches to darkmode config and moon-sun icon switcher*/
+.darkmode {
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
+}
+
+  .moon-sun{
+    display:flex;
+    padding-left: 5%;
+    padding-right: none;
+
+  }
+  .moon-sun img{
+  max-width: 20%;
+  }
+  #icon {
+    cursor: pointer; 
+  }
+
+  .nav-links {
+   display:flex;
+   list-style: none;
+   width: 50%;
+   height: 100%;
+   justify-content:space-around;
+   align-items:center;
+   margin-left: auto;
+
+  }
+
+
+.nav-links li  a{
+  color: #000000;
+  color: var(--primary-color);
+  text-decoration:none;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+/* hide when below laptop resolution [screen size, ie mobile] */
+@media screen and (max-width: 789px) {
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #1793a3;
+    margin: 5px;
+    
+  }
+/* 3 line nav toggle bar set to right/from top then resolved with translate*/
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 2;
+}
+
+  nav {
+    position: relative;
+
+  }
+
+/* Pop out nav bar for ipad and mobile size screens to save size = ref pop.js*/
+  .nav-links {
+    position: fixed;
+    background:rgba(228, 60, 18, 0.9);
+    filter:brightness(100%);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1.2s ease-in ;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events:all;
+  }
+  
+}
+/* end of navbar and linkables */
+
+  /* HERO IMAGE (background DJ Image) */
+.hero-image {
+  background-image: linear-gradient(rgba(22, 21, 21, 0.295), rgba(245, 238, 238, 0.445)),
+    url("./ConchellaImages/HeroImageBnWDJ.webp");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+/* Sunglasses Image | static | Hover effects  */
+.MainShades {
+float: left;
+width: 25%;
+display: flex;
+flex-wrap: wrap;
+}
+
+.MainShades:hover {
+  filter: grayscale(100%);
+  filter:brightness(0.3);
+}
+
+.droptoptime {
+  position:relative;
+  left: 25%;
+  top: 25%;
+  color: #a31717a6;
+  font-size: 5px;
+  font-family: monospace;
+  transform: translate(-10%, -40%);
+  transform:scale(-2, -2);
+  ;
+}
+/* ---End of Sunglasses Image Style--- */
+
+/* ---Constraints of first section--- */
+.top-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ---Settings for countdown over hero img --- */
+/*ref timer.js*/
+.top-container p {
+font-family:Helvetica;
+color: rgb(243, 2, 2);
+font-size: clamp(1.125, 2vw, 1.25);
+font-weight: bolder;
+font: caption;
+font-variant: small-caps;
+}
+
+.hero-text  {
+  display: flex;
+}
+/* ---Double dates button set--- */
+.Hero-button-Container{
+  display: inline-flex;
+ 
+}
+/* ---Button design--- */
+.button1 {
+  padding: 5px 10px;
+  background-color: rgba(55, 164, 214, 0.308);
+  border: 2px goldenrod;
+  cursor: pointer;
+  font-family:monospace;
+  border-radius: 10px;
+}
+.button2 {
+  padding: 5px 10px;
+  background-color: rgba(55, 164, 214, 0.308);
+  border: 2px goldenrod;
+  cursor: pointer;
+  font-family:monospace;
+  border-radius: 10px;
+}
+/* ---Button Effects--- */
+.button1:hover  {
+  background-color: rgb(228, 60, 18);
+  text-transform: uppercase;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.button2:hover  {
+  background-color: rgb(228, 60, 18);
+  text-transform: uppercase;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* ---Headers of first section Hero Text required by mock client | specific | dev note by sean--- */
+h1 {
+  font-size: 22px;
+}
+h2 {
+  font-size: 16px;
+}
+/* ---End of Hero Section --- */
+
+/* ---SECTION Cards--- */
+/* ---Card flex container styling--- */
+/*glass table refers to blue backgrounds of sections after hero*/
+.glass-table {
+
+  max-height: fit-content;
+  filter: opacity(20%);
+  filter:brightness(80%);
+  background-color: rgba(3, 221, 250, 0.808);
+  background-image: url("./ConchellaImages/cloud-twirl-1.webp");
+  background-position: center;
+  background-size:contain;
+  justify-content: center;
+  background-repeat: repeat;
+  border-radius: 5%;
+  z-index: -1;
+}
+/*display parameters for all current and future glass tables*/
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  z-index: 1;
+}
+
+
+
+/* ---Card 1, 2 , 3 styling controls--- */
+ /* ---card 1--- */
+.card {
+  max-width: 20rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: rgba(240, 248, 255, 0.425);
+  box-shadow: 0rem 5rem 5rem var(--color-background);
+  margin: 2rem;
+  overflow: hidden;
+}
+ 
+.card img {
+  justify-content: center;
+  border-radius: 2rem 2rem 0 0;
+}
+ /* ---card 1 end--- */
+  /* ---card 2 start--- */
+.card2 {
+  max-width: 20rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: rgba(240, 248, 255, 0.425);
+  box-shadow: 0rem 5rem 5rem var(--color-background);
+  margin: 2rem;
+  overflow: hidden;
+}
+ 
+.card2 img {
+  justify-content: center;
+  border-radius: 2rem 2rem 0 0;
+}
+/* ---card 2 end--- */
+ /* ---card 3 start--- */
+.card3 {
+  max-width: 20rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: rgba(240, 248, 255, 0.425);
+  box-shadow: 0rem 5rem 5rem var(--color-background);
+  margin: 2rem;
+  overflow: hidden;
+  
+}
+ 
+.card3 img {
+  border-radius: 2rem 2rem 0 0;
+}
+/* ---card 3 end--- */
+
+/*Video section start*/
+/* Welcome Video within grid--- */
+.info {
+  text-align: left;
+  padding: 1rem 2rem;
+}
+
+.welcome-vid h1 {
+  margin-top: 40px;
+  color: rgba(30, 15, 233, 0.911);
+}
+.welcome-vid h2 {
+  color: rgba(30, 15, 233, 0.911);
+}
+
+/* Grid layout, used two rows to give extra row space
+minmax used to allow the content to collapse into single column
+when the screen becomes too small for content.
+Attn: margin top is space between content window panes*/
+.vid-container{
+  margin-top: 2%;
+  display: grid;
+  
+  /*4 columns 25% and 2 rows 50% in general screen rez and 1 column below 320px screen.
+    Auto gave poor results, leaving an expected single file row [into mobile] drip feed 
+    at vv-large screens*/
+
+  /*grid-auto-columns: auto;
+  grid-auto-rows: auto;*/
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  
+}
+/* Video end  */
+
+/* Carousell start  */
+.slide-show-container {
+  max-width: 1000px;
+  position:relative;
+  margin: auto;
+}
+
+.mySlides {
+  width: 100%;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* dot button start, with color change 0.6 second fade / hover animation*/
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgba(55, 164, 214);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: rgb(228, 60, 18);
+}
+.fade {
+  animation-name:var(--color-shadow);
+  animation-duration: 1.5s;
+}
+/* Carousell End css - ref slider.js  */
+
+
+.Tickets {
+
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+footer {
+  background-color: black;
+}
+.footerContainer {
+  width: 100%;
+  padding: 70px 30px 20px
+}
+.socialIcons {
+  display:flex;
+  justify-content: center;
+
+}
+.socialIcons a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: antiquewhite;
+  margin: 10px;
+  border-radius: 50%;
+
+}
+.socialIcons a i {
+  font-size: 1em;
+  color:black
+  
+}
+.socialIcons a:hover {
+  background-color: black;
+  transition: 0.80s;
+}
+.socialIcons a:hover i {
+color: antiquewhite;
+transition: 0.5s;
+}
+
+.footerNav {
+  margin: 30px;
+}
+.footerNav ul {
+  display: flex;
+justify-content: center;
+}
+.footerNav ul li a{
+  color:rgb(240, 248, 255);
+  margin: 20px;
+  text-decoration: none;
+  font-size: small;
+  opacity: 0.7;
+  transition: 0.80s;
+}
+.footerNav ul li a:hover {
+  opacity: 1.0;
+}
+.footerBasement {
+  background-color: black;
+  padding: 2px;
+  text-align: center;
+
+}
+.footerBasement p {
+  color:antiquewhite;
+}
+
+/* Forms styling*/
+.subscribe {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
+  url("./ConchellaImages/Coachella\ Logo\ Long.webp");
+  
+  .subscribe h1, h3, p {
+    color: aqua;
+  }
+
+}
+.message{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+  url("./ConchellaImages/Coachella\ Logo\ Long.webp");
+}
+.message h1 {
+  color: aqua;
+ 
+}
